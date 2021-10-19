@@ -27,7 +27,7 @@ router.get("/admin", (req, res) => {
 });
 
 router.post("/admin", upload.single("photo"), (req, res) => {
-  console.log("here person", req.file);
+  console.log("here person", req.files);
   console.log("oiiiiiiiiiii", req.body);
 
   const userInfo = new UserInfo({
