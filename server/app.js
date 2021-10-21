@@ -34,38 +34,3 @@ app.use(
 // app.use(express.urlencoded({ extended: true }));
 app.use(addInfo);
 app.use(addProjects);
-
-// app.get("/add-info", (req, res) => {
-//   const userInfo = new UserInfo({
-//     fullname: "kiran ghimire",
-//     description: "Hi I am kiran Ghimire",
-//   });
-//   userInfo
-//     .save()
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
-
-// app.get("/single-info", (req, res) => {
-//   UserInfo.findById()
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => console.log(err));
-// });
-
-// app.get("/all-info", (req, res) => {
-//   UserInfo.find()
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => console.log(err));
-// });
-
-// app.use((req, res) => {
-//   res.status(404).render("404", { title: "404" });
-// });

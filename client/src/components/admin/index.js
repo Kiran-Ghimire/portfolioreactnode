@@ -25,6 +25,7 @@ import {
   DiJavascript1,
   DiCss3,
 } from "react-icons/di";
+import { Link } from "react-router-dom";
 import { AiFillHtml5 } from "react-icons/ai";
 const { Option } = Select;
 
@@ -41,12 +42,14 @@ const prefixSelector = (
 );
 
 const Admin = () => {
+  const [id, setId] = React.useState();
   const [file, setFile] = useState();
   const [image, setImage] = useState();
+
   const [componentSize, setComponentSize] = useState("default");
 
   const normFile = (e) => {
-    console.log("Upload event:", e);
+    // console.log("Upload event:", e);
 
     if (Array.isArray(e)) {
       return e;
@@ -79,9 +82,11 @@ const Admin = () => {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((response) => console.log(response))
+      .then((res) => {
+        setId(res.result._id);
+        console.log("ID", res.result);
+      })
       .catch((errors) => console.log(errors));
-    console.log(values);
   };
   const handleUpload = (file) => {
     setImage(file);

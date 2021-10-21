@@ -1,7 +1,10 @@
+import React, { useEffect } from "react";
+
 import "./styles.scss";
+import axios from "axios";
 import Typewriter from "typewriter-effect";
 
-const Intro = () => {
+const Intro = ({ data }) => {
   return (
     <div className="container intro">
       <div className="userdetail">
@@ -28,7 +31,7 @@ const Intro = () => {
 
         <div>
           <h1 style={{ color: "white", marginTop: "6px" }}>
-            Hi, I'm Kiran Ghimire
+            Hi, I'm {data?.fullname}
           </h1>
         </div>
 
